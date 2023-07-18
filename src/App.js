@@ -1,25 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import ChangeTitle from './components/changeTitle/ChangeTitle';
+import AboutPage from './pages/aboutPage/AboutPage';
+import ContactsPage from './pages/contactsPage/ContactsPage';
+import { Counter } from './pages/counter/Count';
+import MainPage from './pages/mainPage/MainPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <MainPage/>
+      <AboutPage/>
+      <ChangeTitle/>
+      <ContactsPage/>
+      <Counter/>
     </div>
   );
 }
-
 export default App;

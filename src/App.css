@@ -2,3 +2,42 @@
   text-align: center;
 }
 
+.activeMenu {
+  position: absolute;
+  box-sizing: border-box;
+  left: 0;
+  top: 50px;
+  width: 100%;
+  background: gray;
+  padding: 20px;
+  transition: 0.6s;
+}
+
+
+.hiddenMenu {
+  position: absolute;
+  box-sizing: border-box;
+  left: -100%;
+  top: 50px;
+  width: 100%;
+  background: gray;
+  padding: 20px;
+  transition: 0.6s;
+}
+
+/****************/
+
+input {
+  width: 70px;
+  padding: 15px 30px;
+  font-size: 30px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 40px;
+}
+
+.calc1 {
+  margin-top: 50px;
+}

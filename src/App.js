@@ -1,18 +1,18 @@
 import './App.css';
-import ChangeTitle from './components/changeTitle/ChangeTitle';
+import Calculator from './dz_2/calculate/Calculate';
+import { Calculates } from './dz_2/calculate2/Calculates';
 import AboutPage from './pages/aboutPage/AboutPage';
-import ContactsPage from './pages/contactsPage/ContactsPage';
-import { Counter } from './pages/counter/Count';
-import MainPage from './pages/mainPage/MainPage';
+import MainPage from './pages/mainPage/mainPage';
+import UsersPage from './pages/usersPage/UsersPage';
 
 function App() {
   return (
     <div className='App'>
-      <MainPage/>
+      {/* <MainPage/>
       <AboutPage/>
-      <ChangeTitle/>
-      <ContactsPage/>
-      <Counter/>
+      <UsersPage/> */}
+      <Calculates/>
+      <Calculator/>
     </div>
   );
 }

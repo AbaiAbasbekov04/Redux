@@ -1,14 +1,23 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import Menu from "../../components/menu";
 
 
 function AboutPage () {
-     
-    const aboutTitle = useSelector(state => state.aboutTitle)
+
+    const dispatch = useDispatch()
+
+
+    const handleMenu = () => {
+        dispatch({
+            type: 'HANDLE_MENU'
+        })
+    }
 
     return (
         <div>
-            <h1>{aboutTitle}</h1>
+            <button onClick={handleMenu}>menu</button>
+            <Menu/>
         </div>
     )
 }

@@ -1,0 +1,9 @@
+export const types = {
+    CHANGE_TITLE: "CHANGE_TITLE",
+    WITH_PARAMS: "WITH_PARAMS",
+    VALUE: "VALUE",
+    ADD_USER: "ADD_USER",
+    DELETE_USER: "DELETE_USER",
+    ADD_NUMBER: "ADD_NUMBER",
+    CLEAR_LIST: "CLEAR_LIST",
+}

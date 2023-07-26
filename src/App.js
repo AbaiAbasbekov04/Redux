@@ -1,18 +1,14 @@
 import './App.css';
-import Calculator from './dz_2/calculate/Calculate';
-import { Calculates } from './dz_2/calculate2/Calculates';
-import AboutPage from './pages/aboutPage/AboutPage';
-import MainPage from './pages/mainPage/mainPage';
-import UsersPage from './pages/usersPage/UsersPage';
+import MainPage from './pages/mainPage/MainPage';
+import NumberPage from './pages/masterPage/MasterPage';
+import UsersPage from './pages/usersPage/UserPage';
 
 function App() {
   return (
     <div className='App'>
-      {/* <MainPage/>
-      <AboutPage/>
-      <UsersPage/> */}
-      <Calculates/>
-      <Calculator/>
+      {/* <MainPage/> */}
+      {/* <UsersPage/> */}
+      <NumberPage/>
     </div>
   );
 }

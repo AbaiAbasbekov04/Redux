@@ -1,47 +1,47 @@
-import { types } from "../types"
+import { types } from "../types";
 
 export function changeTitleAction() {
     return {
-        type: types.CHANGE_TITLE
+        type: types.CHANGE_TITLE,
     }
 }
 
-export function withParamsAction(title) {
-    return {
-        type: types.WITH_PARAMS,
-        payload: title
+export function asyncFunctionAction () {
+    return function () {
+        setTimeout(() => {
+            alert('Hello')
+        }, 2000)
     }
 }
 
-export function changeInputAction(value) {
+function getUsersAction (users) {
     return {
-        type: types.VALUE,
-        payload: value
+        type: types.GET_USERS,
+        payload: users
     }
 }
 
-export function addUsersAction(name) {
-    return {
-        type: types.ADD_USER,
-        payload: name
+export function fetchUsersAction () {
+
+    return async function (dispatch) {
+        const response = await fetch('https://jsonplaceholder.typicode.com/users')
+        const data = await response.json()
+        dispatch(getUsersAction(data))
     }
 }
 
-export function deleteAction() {
+function getUsersOneAction (more) {
     return {
-        type: types.DELETE_USER
+        type: types.GET_MORE,
+        payload: more
+    }
+}
+export function fetchUserOneAction (id) {
+
+    return async function (dispatch) {
+        const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+        const data = await response.json()   
+        dispatch(getUsersOneAction(data))
     }
 }
 
-export function addNumberAction(number) {
-    return {
-        type: types.ADD_NUMBER,
-        payload: number
-    }
-}
-
-export function clearListAction() {
-    return {
-        type: types.CLEAR_LIST
-    }
-}

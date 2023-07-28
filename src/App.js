@@ -1,14 +1,14 @@
 import './App.css';
+import AboutPage from './pages/aboutPage/AboutPage';
 import MainPage from './pages/mainPage/MainPage';
-import NumberPage from './pages/masterPage/MasterPage';
-import UsersPage from './pages/usersPage/UserPage';
+import UsersPage from './pages/usersPage/UsersPage';
 
 function App() {
   return (
     <div className='App'>
-      {/* <MainPage/> */}
-      {/* <UsersPage/> */}
-      <NumberPage/>
+    {/* <MainPage/> */}
+    {/* <AboutPage/> */}
+    <UsersPage/>
     </div>
   );
 }

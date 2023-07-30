@@ -1,47 +1,57 @@
 import { types } from "../types";
 
-export function changeTitleAction() {
+function preloaderOn () {
     return {
-        type: types.CHANGE_TITLE,
+        type: types.PRELOADER_ON
     }
 }
-
-export function asyncFunctionAction () {
-    return function () {
-        setTimeout(() => {
-            alert('Hello')
-        }, 2000)
-    }
-}
-
-function getUsersAction (users) {
+function preloaderOff () {
     return {
-        type: types.GET_USERS,
-        payload: users
+        type: types.PRELOADER_OFF
     }
 }
 
-export function fetchUsersAction () {
 
+
+export function addUserAction (user) {
     return async function (dispatch) {
-        const response = await fetch('https://jsonplaceholder.typicode.com/users')
-        const data = await response.json()
-        dispatch(getUsersAction(data))
+        dispatch(preloaderOn())
+
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        }
+
+        const response = await fetch('https://jsonplaceholder.typicode.com/users/', options)
+  
+        if(response.status === 201) {
+            dispatch(preloaderOff())
+        }
+        else if (response.status === 404) {
+            dispatch(preloaderOn())
+        }
     }
 }
 
-function getUsersOneAction (more) {
+
+
+
+function user_name(users) {
     return {
-        type: types.GET_MORE,
-        payload: more
+        type: types.USER_NAME,
+        payload: users,
     }
 }
-export function fetchUserOneAction (id) {
 
+export function addUserDateAction() {
+    
     return async function (dispatch) {
-        const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
-        const data = await response.json()   
-        dispatch(getUsersOneAction(data))
+        
+        const response = await fetch('https://jsonplaceholder.typicode.com/users/')
+        const date = await response.json()
+        dispatch(user_name(date))
     }
 }
-

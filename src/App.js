@@ -1,15 +1,20 @@
 import './App.css';
-import AboutPage from './pages/aboutPage/AboutPage';
-import MainPage from './pages/mainPage/MainPage';
-import UsersPage from './pages/usersPage/UsersPage';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import  'bootstrap/dist/css/bootstrap.min.css';
+import UserRegister from './pages/usersPage/UsersRegister';
+import Menu from './components/Menu';
+import UsersListPage from './pages/usersListPage/UsersListPage';
 
 function App() {
   return (
-    <div className='App'>
-    {/* <MainPage/> */}
-    {/* <AboutPage/> */}
-    <UsersPage/>
-    </div>
+    <BrowserRouter>
+    <Menu/>
+    <Routes>
+        <Route index element={<UserRegister/>}></Route>
+        <Route path={'/users'} element={<UsersListPage/>}></Route>
+
+    </Routes>
+    </BrowserRouter>
   );
 }
 export default App;
